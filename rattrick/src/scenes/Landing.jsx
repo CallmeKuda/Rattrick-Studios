@@ -44,7 +44,6 @@ const Landing = ({ setSelectedPage }) => {
         >
           <p className="text-6xl font-playfair z-10 text-center md:text-start">
             RATTRICK STUDIOS{""}
-          
           </p>
 
           <p className="mt-3 mb-7 text-sm text-center md:text-start">

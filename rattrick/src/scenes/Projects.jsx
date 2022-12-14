@@ -51,7 +51,7 @@ const Projects = () => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-red">PRO</span>JECTS
+            <span className="text-red">OUR LATEST</span> GAMES
           </p>
           <div className="flex justify-center mt-5">
             <LineGradient width="w-2/3" />

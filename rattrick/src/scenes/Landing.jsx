@@ -47,9 +47,9 @@ const Landing = ({ setSelectedPage }) => {
           
           </p>
 
-          <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-            viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+          <p className="mt-3 mb-7 text-sm text-center md:text-start">
+            We are a small game development company striving to create games that bring
+            change and have a positive impact an all players around the globe.
           </p>
         </motion.div>
 
@@ -71,17 +71,9 @@ const Landing = ({ setSelectedPage }) => {
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            Contact Me
+            Write to us and say hi!
           </AnchorLink>
-          <AnchorLink
-            className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
-            onClick={() => setSelectedPage("contact")}
-            href="#contact"
-          >
-            <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
-              Let's talk.
-            </div>
-          </AnchorLink>
+          
         </motion.div>
 
         <motion.div

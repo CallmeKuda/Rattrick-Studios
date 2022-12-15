@@ -6,9 +6,13 @@ const Footer = () => {
       <div className="w-10/12 mx-auto">
         <SocialMediaIcons />
         <div className="md:flex justify-center md:justify-between text-center ">
-          <p className="font-playfair font-semibold text-2xl text-yellow">
-            Designed by Michael Ndhlukula
+          <p className="font-playfair font-semibold text-1xl text-yellow">
+          Designed by Michael Ndhlukula
           </p>
+          <p className="font-playfair font-semibold text-4xl text-yellow">
+          WEBSITE STILL UNDER CONSTRUCTION
+          </p>
+          
           <p className="font-playfair text-md text-yellow">
             ©2022 Rattrick. All Rights Reserved.
           </p>

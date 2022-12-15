@@ -63,10 +63,10 @@ const MySkills = () => {
           <div className="relative h-32">
             <div className="z-10">
               <p className="font-playfair font-semibold text-3xl mt-3">
-                No Opening available
+                No Openings available
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
+       
           </div>
          
         </motion.div>
@@ -86,10 +86,10 @@ const MySkills = () => {
           <div className="relative h-32">
             <div className="z-10">
               <p className="font-playfair font-semibold text-3xl mt-3">
-              No Opening available
+              No Openings available
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
+          
           </div>
         
         </motion.div>
@@ -108,10 +108,10 @@ const MySkills = () => {
           <div className="relative h-32">
             <div className="z-10">
               <p className="font-playfair font-semibold text-3xl mt-3">
-              No Opening available
+              No Openings available
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
+          
           </div>
         </motion.div>
       </div>

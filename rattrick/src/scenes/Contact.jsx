@@ -8,11 +8,11 @@ export default function ContactUs() {
     function sendEmail(e) {
         e.preventDefault();
 
-    emailjs.sendForm('gmail', 'youtube_template', e.target, 'user_JABO21I8Gm6sxByJH17Nu')
+    emailjs.sendForm('gmail', 'service_uw9ogtp', e.target, 'TIk6OJ4mNVyeMKZBt')
         .then((result) => {
-            console.log(result.text);
+            console.log('SUCCESS!',result.text);
         }, (error) => {
-            console.log(error.text);
+            console.log('FAILED...',error.text);
         });
         e.target.reset()
     }
@@ -57,10 +57,9 @@ export default function ContactUs() {
                         <div className="col-8 form-group pt-2 mx-auto">
                             <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="" cols="50" rows="3" placeholder="Your message" name="message"></textarea>
                         </div>
-                        <div className="col-8 pt-3 mx-auto">
-                            <input type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" value="Send Message"></input>
+                        </div><div className="col-8 pt-3 mx-auto">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" value="Send">Send Message</button>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>

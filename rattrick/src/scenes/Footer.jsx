@@ -7,7 +7,7 @@ const Footer = () => {
         <SocialMediaIcons />
         <div className="md:flex justify-center md:justify-between text-center ">
           <p className="font-playfair font-semibold text-1xl text-yellow">
-          Designed by Michael Ndhlukula
+          <a href="https://github.com/CallmeKuda/Rattrick-Studios">Designed by Michael Ndhlukula</a>
           </p>
           <p className="font-playfair font-semibold text-4xl text-yellow">
           WEBSITE STILL UNDER CONSTRUCTION

@@ -1,24 +1,24 @@
 import LineGradient from "../components/LineGradient";
-import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
+import React from 'react';
 
-const Contact = () => {
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm();
+export default function ContactUs() {
 
-  const onSubmit = async (e) => {
-    console.log("~ e", e);
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
+    function sendEmail(e) {
+        e.preventDefault();
+
+    emailjs.sendForm('gmail', 'youtube_template', e.target, 'user_JABO21I8Gm6sxByJH17Nu')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        e.target.reset()
     }
-  };
 
-  return (
-    <section id="contact" className="contact py-48">
+    return(
+        <section id="contact" className="contact py-46">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -41,102 +41,29 @@ const Contact = () => {
         </div>
       </motion.div>
 
-      {/* FORM & IMAGE */}
-      <div className="md:flex md:justify-between gap-16 mt-5">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="basis-1/2 flex justify-center"
-        >
-          <img src="../assets/contact-image.jpeg" alt="contact" />
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="basis-1/2 mt-10 md:mt-0"
-        >
-          <form
-            target="_blank"
-            onSubmit={onSubmit}
-            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
-            method="POST"
-          >
-            <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
-              type="text"
-              placeholder="NAME"
-              {...register("name", {
-                required: true,
-                maxLength: 100,
-              })}
-            />
-            {errors.name && (
-              <p className="text-red mt-1">
-                {errors.name.type === "required" && "This field is required."}
-                {errors.name.type === "maxLength" && "Max length is 100 char."}
-              </p>
-            )}
-
-            <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
-              type="text"
-              placeholder="EMAIL"
-              {...register("email", {
-                required: true,
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              })}
-            />
-            {errors.email && (
-              <p className="text-red mt-1">
-                {errors.email.type === "required" && "This field is required."}
-                {errors.email.type === "pattern" && "Invalid email address."}
-              </p>
-            )}
-
-            <textarea
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
-              name="message"
-              placeholder="MESSAGE"
-              rows="4"
-              cols="50"
-              {...register("message", {
-                required: true,
-                maxLength: 2000,
-              })}
-            />
-            {errors.message && (
-              <p className="text-red mt-1">
-                {errors.message.type === "required" &&
-                  "This field is required."}
-                {errors.message.type === "maxLength" &&
-                  "Max length is 2000 char."}
-              </p>
-            )}
-
-            <button
-              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
-              type="submit"
-            >
-              SEND ME A MESSAGE
-            </button>
-          </form>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-export default Contact;
+        <div>
+            <div className="container">
+            <form onSubmit={sendEmail}>
+                    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <div className="col-8 form-group mx-auto">
+                            <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Name" name="name"/>
+                        </div>
+                        <div className="col-8 form-group pt-2 mx-auto">
+                            <input type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Email Address" name="email"/>
+                        </div>
+                        <div className="col-8 form-group pt-2 mx-auto">
+                            <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Subject" name="subject"/>
+                        </div>
+                        <div className="col-8 form-group pt-2 mx-auto">
+                            <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="" cols="50" rows="3" placeholder="Your message" name="message"></textarea>
+                        </div>
+                        <div className="col-8 pt-3 mx-auto">
+                            <input type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" value="Send Message"></input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </section>
+    )
+}

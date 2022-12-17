@@ -9,6 +9,7 @@ import Footer from "./scenes/Footer";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import {Helmet} from "react-helmet";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -28,7 +29,14 @@ function App() {
   }, []);
 
   return (
+
     <div className="app bg-deep-blue">
+       <Helmet>
+        <title>Rattrick Studios</title>
+        <link rel="canonical" href="https://www.rattrickstudios.com/" />
+        <meta name="description" content="RT Studios website" />
+    </Helmet>
+
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
